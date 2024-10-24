@@ -2,6 +2,7 @@
   "name": "cs356-cs-classes",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://myleafy1.github.io/cs356-cs-classes/",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
