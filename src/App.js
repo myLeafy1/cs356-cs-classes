@@ -6,9 +6,27 @@ import './App.css';
 
 const CLASSES = [
   {
+    "Title": "Introduction to Computer Science",
+    "Name": "CS111",
+    "Prerequisites": "",
+    "Availability": "All Semesters/Terms",
+    "Description": "Teaches how to design, develop, reason about, and test programs. Topics include higher-order functions, object-oriented programming, recursion, algorithms, data structures, decomposition, interpreters, and regular expressions.",
+    "requirements": "minor major",
+    "Link": ""
+  },
+  {
+    "Title": "Introduction to Computer Systems",
+    "Name": "CS224",
+    "Prerequisites": "CS235",
+    "Availability": "Fall, Winter, Summer",
+    "Description": "How a computer works to execute sequential code: low level data representation and abstraction, the relationship between C and assembly, computer architecture and pipelining, the memory hierarchy, dynamic memory allocation, and linking.",
+    "requirements": "",
+    "Link": ""
+  },
+  {
     "Title": "Data Structures",
     "Name": "CS235",
-    "Prerequisites": "CS101",
+    "Prerequisites": "CS111",
     "Availability": "Fall, Winter",
     "Description": "This course covers the implementation and application of data structures such as lists, stacks, queues, trees, and graphs. Emphasis is on algorithm analysis and design.",
     "requirements": "minor major",
@@ -69,6 +87,15 @@ const CLASSES = [
     "Link": ""
   },
   {
+    "Title": "Scripting for Animation",
+    "Name": "CSANM 258",
+    "Prerequisites": "",
+    "Availability": "Winter",
+    "Description": "Developing basic scripting skills to procedurally build intricate systems of models, rigs, and animation. Students learn how to reduce manual hours and efficiently create simple to complex effects.",
+    "requirements": "csanm",
+    "Link": ""
+  },
+  {
     "Title": "Photography for Animation",
     "Name": "CSANM 355",
     "Prerequisites": "",
@@ -91,6 +118,14 @@ function App() {
       setCurrentClasses(CLASSES.filter(csClass => csClass.requirements.includes("minor")));
     } else if (filterType === 'major') {
       setCurrentClasses(CLASSES.filter(csClass => csClass.requirements.includes("major")));
+    } else if (filterType === 'csanm') {
+      setCurrentClasses(CLASSES.filter(csClass => csClass.requirements.includes("csanm")));
+    } else if (filterType === 'bioinformatics') {
+      setCurrentClasses(CLASSES.filter(csClass => csClass.requirements.includes("bioinformatics")));
+    } else if (filterType === 'softwareEngineering') {
+      setCurrentClasses(CLASSES.filter(csClass => csClass.requirements.includes("softwareEngineering")));
+    } else if (filterType === 'machineLearning') {
+      setCurrentClasses(CLASSES.filter(csClass => csClass.requirements.includes("machineLearning")));
     }
   }
 
@@ -118,6 +153,21 @@ function App() {
           >
             Major
           </button>
+        </div>
+        <div>
+          <div className="subtitle">Emphasises 
+          <select
+            className="filter-dropdown"
+            value={activeFilter}
+            onChange={(e) => filterClasses(e.target.value)}
+          >
+            <option value="all">All Classes</option>
+            <option value="csanm">Animation and Games</option>
+            <option value="bioinformatics">Bioinformatics</option>
+            <option value="softwareEngineering">Software Engineering</option>
+            <option value="machineLearning">Machine Learning</option>
+          </select>
+          </div>
         </div>
       </div>
       <div>
