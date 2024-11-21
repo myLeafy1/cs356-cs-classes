@@ -49,6 +49,12 @@ h1{
   padding: 10px;
 }
 
+img, input{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .filter-button {
   background-color: whitesmoke;
   color: rgb(0, 0, 0);
